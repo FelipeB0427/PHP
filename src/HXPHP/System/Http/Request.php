@@ -138,7 +138,6 @@ class Request
     public function post(string $name = null)
     {
         $post = $this->filter($_POST, INPUT_POST, $this->custom_filters);
-
         if (!$name) {
             foreach ($post as $field => $value)
                 $post[$field] = is_array($value) ? array_map('trim', $value) : trim($value);
