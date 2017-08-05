@@ -12,6 +12,10 @@ $configs->env->development->database->setConnectionData(array(
     'dbname' => 'sistemafba'
     ));
 
+  $configs->env->development->auth->setURLs('/sistema/home/', '/sistema/login/');
+
+  return $configs;
+
 
 /*
   //Globais
