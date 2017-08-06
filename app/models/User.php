@@ -22,9 +22,13 @@ class User extends \HXPHP\System\Model
 		);
 
 	   static $validates_uniqueness_of = array(
-       	array(
-       		array('username', 'email'), 
-       		'message' => 'Já existe um usuário com este e-mail e/ou Nome de usuário cadatrado.'
+       		array(
+       		'username',
+       		'message' => 'Já existe um usuário com este Nome de usuário cadatrado.'
+       		),
+       		array(
+       		'email',
+       		'message' => 'Já existe um usuário com este E-mail cadatrado.'
        		)
 		 );
 
@@ -67,5 +71,23 @@ class User extends \HXPHP\System\Model
 		}
 
 		return $callbackObj;
+	}
+
+	public static function login(array $post)
+	{
+		$user = self::find_by_username($post['username']);
+
+		if(!is_null($user)) {
+			$password = \HXPHP\System\Tools::hashHX($post['password'], $user->salt);
+
+			if (LoginAttempt::ExistemTentativas($user->id)) {
+				if ($password['password'] === $user->password) {
+					LoginAttempt::LimparTentativas($user->id);
+				}
+				else {
+					LoginAttempt::RegistrarTentativa($user->id);
+				}
+			}
+		}
 	}
 }
