@@ -14,12 +14,8 @@
         }
     ],
     "autoload": {
-        "psr-4":{
-            "HXPHP\\": "src/HXPHP"
+        "psr-0": {
+            "": ["src/"]
         }
-    },
-    "config": {
-        "discard-changes": "stash",    
-        "preferred-install": "dist"    
     }
 }

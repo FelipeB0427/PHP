@@ -2,7 +2,7 @@
 
 class LoginController extends \HXPHP\System\Controller
 {
-		public function __construct($configs)
+	public function __construct($configs)
 	{
 		parent::__construct($configs);
 
@@ -12,17 +12,41 @@ class LoginController extends \HXPHP\System\Controller
 			$configs->auth->after_logout,
 			true
 		);
+	}
 
+	public function indexAction()
+	{
 		$this->auth->redirectCheck(true);
 	}
+
 	public function logarAction()
 	{
-			$this->view->setFile('index');
+		$this->auth->redirectCheck(true);
 
-			$post = $this->reqest->post();
+		$this->view->setFile('index');
 
-			if(!empty($post)) {
+		$post = $this->request->post();
 
+		if (!empty($post)) {
+			$login = User::login($post);
+
+			if ($login->status === true) {
+				$this->auth->login($login->user->id, $login->user->username);
 			}
-	}	
+			else {
+				$this->load('Modules\Messages', 'auth');
+				$this->messages->setBlock('alerts');
+				$error = $this->messages->getByCode($login->code, array(
+					'message' => $login->tentativas_restantes
+				));
+
+				$this->load('Helpers\Alert', $error);
+			}
+		}
+	}
+
+	public function sairAction()
+	{
+		return $this->auth->logout();
+	}
 }

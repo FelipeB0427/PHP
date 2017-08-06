@@ -2,20 +2,19 @@
 
 O HXPHP é um mini-framework PHP.
 
-#### PHP 5.x:
-[https://github.com/brunosantoshx/hxphp/releases/tag/v2.18.14](https://github.com/brunosantoshx/hxphp/releases/tag/v2.18.14).
+![QR CODE](http://www.hxphp.com.br/qr.png "QR CODE")
 
-#### PHP 7.0.0:
-[https://github.com/brunosantoshx/hxphp/releases/tag/3.0.0-rc.4](https://github.com/brunosantoshx/hxphp/releases/tag/3.0.0-rc.4).
-
-
-### Qual é a diferença do HXPHP e os demais frameworks PHP?
+### Qual é a diferença do HXPHP em comparação aos demais frameworks PHP?
 --------------------------------------------------------------------
 
-O HXPHP não foi desenvolvido para ser o **framework perfeito**, nem o **framework do código lindo** e sim, na verdade, ser o **framework de iniciação** dos programadores PHP. Trata-se de uma ferramenta simples que tem o objetivo  de apresentar o universo dos frameworks com um primeiro contato fácil e produtivo. E, para isso, em poucas horas o programador já é capaz de criar diversas soluções; fator este mais do que estimulante.
+O HXPHP Framework não foi desenvolvido para ser o **framework perfeito**, nem o **framework do código lindo** e sim, na verdade, ser o **primeiro framework** dos programadores PHP. Trata-se de uma ferramenta simples que tem o objetivo nobre de introduzir programadores iniciantes e/ou intermediários ao universo dos frameworks com um primeiro contato fácil e produtivo, visto que em poucas horas o programador já é capaz de criar diversas soluções, fator este mais do que estimulante.
 
-Lembre-se também que antes de estudar um framework é mais do que recomendado, imprescindível, o domínio da linguagem PHP. Afinal, independente do framework, você deve ser um(a) programador(a) PHP.
+Lembre-se também que antes de estudar um framework é mais do que recomendado, diria imprescindível, o domínio da linguagem PHP em si. Afinal, independente do framework, você deve ser um programador PHP.
 
-#### Link para documentação:
+Te desejo muito sucesso e espero que você nunca pare de estudar, pois a tecnologia não para e nós, por mais difícil que seja, devemos acompanhar esta evolução.
+
+Um forte abraço do seu amigo Bruno Santos.
+
+####Link para documentação:
 ---------------------------------------------------------------------
-[https://github.com/brunosantoshx/hxphp-docs](https://github.com/brunosantoshx/hxphp-docs).
+[https://www.hxphp.com.br/documentacao/](http://www.hxphp.com.br/documentacao/).

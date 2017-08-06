@@ -13,8 +13,9 @@ class CadastroController extends \HXPHP\System\Controller
 			true
 		);
 
-		$this->auth->redirectCheck(false);
+		$this->auth->redirectCheck(true);
 	}
+
 	public function cadastrarAction()
 	{
 		$this->view->setFile('index');
@@ -28,12 +29,12 @@ class CadastroController extends \HXPHP\System\Controller
 		if (!empty($post)) {
 			$cadastrarUsuario = User::cadastrar($post);
 
-			if($cadastrarUsuario->status == false) {
+			if ($cadastrarUsuario->status === false) {
 				$this->load('Helpers\Alert', array(
 					'danger',
 					'Ops! Não foi possível efetuar seu cadastro. <br> Verifique os erros abaixo:',
 					$cadastrarUsuario->errors
-					));
+				));
 			}
 			else {
 				$this->auth->login($cadastrarUsuario->user->id, $cadastrarUsuario->user->username);

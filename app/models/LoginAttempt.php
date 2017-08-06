@@ -9,14 +9,14 @@ class LoginAttempt extends \HXPHP\System\Model
 
 	public static function TentativasRestantes($user_id)
 	{
-		return intval(5-self::TotalDeTentativas());
+		return intval(5-self::TotalDeTentativas($user_id));
 	}
 
 	public static function RegistrarTentativa($user_id)
 	{
 		self::create(array(
 			'user_id' => $user_id
-			));
+		));
 	}
 
 	public static function LimparTentativas($user_id)
@@ -25,12 +25,12 @@ class LoginAttempt extends \HXPHP\System\Model
 			'conditions' => array(
 				'user_id = ?',
 				$user_id
-				)
-			));
+			)
+		));
 	}
 
 	public static function ExistemTentativas($user_id)
 	{
-		return self::TotalDeTentativas() < 5 ? true : false;
+		return self::TotalDeTentativas($user_id) < 5 ? true : false;
 	}
 }
